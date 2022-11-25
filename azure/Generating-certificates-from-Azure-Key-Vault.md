@@ -6,6 +6,8 @@ To generate a certificate, a policy is required. You can get the default policy 
 
 `az keyvault certificate get-default-policy | Out-File -Encoding utf8 [yourname].json ` 
 
+**Important**: this command needs to be executed from a PowerShell prompt because Out-File is PowerShell specific.
+
 The generated policy file will look like this:
 
 ```json
@@ -58,3 +60,26 @@ With the above policy, you can create a certificate in your Azure Key Vault:
  --policy `@[your-policy-file-name]
 ```
 
+Below is a PowerShell script that can be used for creating the certificate:
+
+```powershell
+# This script will generate a certificate in Key Vault based on the default policy of Azure Key Vault. 
+param (
+    [string]$keyvaultName = "default-name-of-your-keyvault", 
+    [string]$certificateName = "default-name-of-your-certificate"    
+)
+
+Write-Output "Getting the default policy from Key Vault"
+az keyvault certificate get-default-policy | Out-File -Encoding utf8 default-policy.json
+
+Write-Output "Creating the certificate in Key Vault"
+az keyvault certificate create `
+ --vault-name $keyvaultName `
+ -n $certificateName `
+ --policy `@default-policy.json
+
+Write-Output "Certificate created in Key Vault"
+az keyvault certificate list --vault-name $keyvaultName
+```
+
+ 
