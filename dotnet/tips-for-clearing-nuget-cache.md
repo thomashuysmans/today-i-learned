@@ -18,14 +18,7 @@ dotnet nuget locals all --clear
 
 ### Tip 2  In Visual Studio:
 
+Go to Tools --> Nuget Package Manager --> Package Manager Settings
 
-
-### Tip 3 Deleteing folders in Windows Explorer 
-
-You find the cache folders on following locations:
-
-%LocalAppData%\Nuget\Cache
-%UserProfile% \ .nuget\packages
-
-When you delete the above folders, you are clearing the cache
+![Screenshot 2022-12-02 at 08.17.11](/Users/thomas/Desktop/Screenshot 2022-12-02 at 08.17.11.png)
 
