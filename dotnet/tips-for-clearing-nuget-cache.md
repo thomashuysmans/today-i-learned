@@ -20,5 +20,5 @@ dotnet nuget locals all --clear
 
 Go to Tools --> Nuget Package Manager --> Package Manager Settings
 
-![Screenshot 2022-12-02 at 08.17.11](/Users/thomas/Desktop/Screenshot 2022-12-02 at 08.17.11.png)
+![Screenshot 2022-12-02 at 08.17.11](../images/Screenshot 2022-12-02 at 08.17.11.png)
 
